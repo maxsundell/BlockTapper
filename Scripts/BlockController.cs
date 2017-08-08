@@ -46,7 +46,10 @@ public class BlockController : MonoBehaviour
             for (int i = 0; i < Input.touchCount; i++)
             {
 
-                checkTouch(Input.GetTouch(i).position);
+                if (Input.GetTouch(i).phase == TouchPhase.Began)
+                {
+                    checkTouch(Input.GetTouch(i).position);
+                }         
 
             }
 
