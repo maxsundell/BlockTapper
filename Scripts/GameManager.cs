@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
     public static bool gameOver;
 
     public BannerView bannerAd;
+    public InterstitialAd videoAd;
+
+    static int loadCount = 1;
 
     public void ShowBannerAd()
     {
@@ -35,12 +38,44 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void RequestVideoAd()
+    {
+
+        string videoID = "ca-app-pub-2192478680249555/2698651235";
+
+        videoAd = new InterstitialAd(videoID);
+
+        videoAd.LoadAd(CreateAdRequest());
+
+    }
+
+    public AdRequest CreateAdRequest()
+    {
+
+        return new AdRequest.Builder().Build();
+
+    }
+
+    public void ShowVideoAd()
+    {
+
+        if (videoAd.IsLoaded())
+        {
+
+            videoAd.Show();
+
+        }
+
+    }
+
     private void Start()
     {
 
         gameOver = false;
 
         BlockTouchController.score = 0;
+
+        RequestVideoAd();
 
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
@@ -118,6 +153,17 @@ public class GameManager : MonoBehaviour
         if (gameOver == false)
         {
 
+            gameOver = true;
+
+            if (loadCount % 5 == 0)
+            {
+
+                ShowVideoAd();
+
+            }
+
+            loadCount++;
+
             ShowBannerAd();
 
             StartCoroutine(DisableButtonTemp(retryButton));
@@ -133,7 +179,7 @@ public class GameManager : MonoBehaviour
             FindObjectOfType<PlayGamesServicesManager>().IncrementAchievement("CgkI0qzfiowYEAIQFA", BlockTouchController.score);
             FindObjectOfType<PlayGamesServicesManager>().IncrementAchievement("CgkI0qzfiowYEAIQFQ", BlockTouchController.score / 10);
 
-            gameOver = true;           
+                      
 
         }
 
