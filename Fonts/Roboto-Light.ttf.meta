@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 0862fa6b9453a4149b24455281c2c454
-timeCreated: 1502060787
+guid: 4060e9d74c1b60b4291f7fbe8579a29e
+timeCreated: 1502239028
 licenseType: Free
 TrueTypeFontImporter:
   serializedVersion: 4
@@ -12,7 +12,8 @@ TrueTypeFontImporter:
   fontName: Roboto
   fontNames:
   - Roboto
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 178b6e243b431884ca80a2077355a662, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

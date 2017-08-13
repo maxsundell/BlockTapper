@@ -3,14 +3,13 @@ using UnityEngine.UI;
 
 public class ScoreText : MonoBehaviour
 {
+	
+	public Text scoreText;
 
-    public Text scoreText;
-
-    
-    private void Update()
+    private void Start()
     {
 
-        scoreText.text = BlockController.score.ToString();
+        scoreText.text = "<size=150>SCORE</size>\n<b>" + BlockTouchController.score.ToString() + "</b>";
 
     }
 

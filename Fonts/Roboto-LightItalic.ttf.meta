@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 7eaadce0a3dfa66438fb62fa50865c71
-timeCreated: 1502060787
+guid: de72078d461c6604d8399888bffdd01c
+timeCreated: 1502239028
 licenseType: Free
 TrueTypeFontImporter:
   serializedVersion: 4
@@ -13,10 +13,14 @@ TrueTypeFontImporter:
   fontNames:
   - Roboto
   fallbackFontReferences:
-  - {fileID: 12800000, guid: 2a7ba6301e60e1d458145cc20888388d, type: 3}
-  - {fileID: 12800000, guid: 3fe7c4217b9fbec4bb9a1edb2f2eec24, type: 3}
-  - {fileID: 12800000, guid: 0862fa6b9453a4149b24455281c2c454, type: 3}
-  - {fileID: 12800000, guid: 7bcff5ee43721d1459307c456bb8e22b, type: 3}
+  - {fileID: 12800000, guid: d464e941bd6435f47b5c2b2bdb3127d0, type: 3}
+  - {fileID: 12800000, guid: 178b6e243b431884ca80a2077355a662, type: 3}
+  - {fileID: 12800000, guid: d20d33644e57d57488872112016a8928, type: 3}
+  - {fileID: 12800000, guid: 8c203d740fc866142bb5ecaad67fc55e, type: 3}
+  - {fileID: 12800000, guid: 7101ae1503428dd428f4877305042daa, type: 3}
+  - {fileID: 12800000, guid: 4060e9d74c1b60b4291f7fbe8579a29e, type: 3}
+  - {fileID: 12800000, guid: ceba96fba72640b47a4c08647b3ad78a, type: 3}
+  - {fileID: 12800000, guid: b890295f43823b745bafdc08ecf443dc, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

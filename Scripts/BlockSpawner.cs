@@ -17,15 +17,14 @@ public class BlockSpawner : MonoBehaviour
     {
 
         screenBorder = new Vector2(Camera.main.aspect * Camera.main.orthographicSize, Camera.main.orthographicSize);
-
-        BlockController.score = 0;
-
+        
     }
+
 
     private void Update()
     {
 
-        if (Time.timeSinceLevelLoad > nextSpawnTime)
+        if (Time.timeSinceLevelLoad > nextSpawnTime && Time.timeScale != 0)
         {
 
             float spawnDelay = Mathf.Lerp(spawnDelayMinMax.y, spawnDelayMinMax.x, DifficultyManager.getDifficultyPercent());
@@ -36,13 +35,13 @@ public class BlockSpawner : MonoBehaviour
             float spawnScale = Random.Range(spawnScaleMinMax.x, spawnScaleMinMax.y);
             Vector2 spawnPos = new Vector2(Random.Range(screenBorder.x - spawnScale, -screenBorder.x + spawnScale), screenBorder.y + spawnScale);
 
-            GameObject cubeInstance = Instantiate(blockPrefab, spawnPos, Quaternion.Euler(Vector3.forward * spawnRot));
-            cubeInstance.transform.localScale = Vector3.one * spawnScale;
+            GameObject blockInstance = Instantiate(blockPrefab, spawnPos, Quaternion.Euler(Vector3.forward * spawnRot));
+            blockInstance.transform.localScale = Vector3.one * spawnScale;
 
-            cubeInstance.transform.parent = transform;
+            blockInstance.transform.parent = transform;
 
         }
-
+        
     }
 
 }

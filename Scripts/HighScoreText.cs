@@ -14,7 +14,7 @@ public class HighScoreText : MonoBehaviour
 
         highScore = PlayerPrefs.GetInt("High Score");
 
-        score = BlockController.score;
+        score = BlockTouchController.score;
 
         if (score > highScore)
         {
@@ -22,9 +22,11 @@ public class HighScoreText : MonoBehaviour
             highScore = score;
             PlayerPrefs.SetInt("High Score", highScore);
 
+            FindObjectOfType<PlayGamesServicesManager>().PostingToLeaderboard(score, "CgkI0qzfiowYEAIQDQ");
+
         }
 
-        highScoreText.text = highScore.ToString();
+        highScoreText.text = "<size=150>HIGH SCORE</size>\n<b>" + highScore.ToString() + "</b>";
 
     }
 

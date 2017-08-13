@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public static class DifficultyManager
+public class DifficultyManager
 {
 
     static float secondsToMaxDifficulty = 60f;
